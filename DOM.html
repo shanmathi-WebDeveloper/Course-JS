@@ -1,0 +1,74 @@
+<!-- document object model-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="head"  class="header">document</h1>
+    <h2>haiii</h2>
+    <div id="box">
+
+    </div>
+    
+</body>
+<script>
+    console.log("hello")
+    console.log(document) 
+
+    console.log(document.title)
+    let element=document.getElementById('box');                             //used to access by id
+    console.log(element)
+
+    element.textContent
+    console.log(element.textContent)
+
+    element.textContent += " object model"
+    console.log(element.textContent)
+
+    element.className="bodyClass"
+    element.innerHTML='<p>hi hi hi hi </p>'
+
+    element.style.color='red';
+    element.style.background='blue'
+    element.style.fontFamily="san-sherif"
+
+
+    let elements=document.getElementsByTagName('h1')                        //used to access by tagname
+    console.log(elements)
+    console.log(elements[0])
+
+
+
+    let Elements=document.getElementsByClassName('header')                  //used to access by classname
+    console.log(Elements)
+    console.log(Elements[0])
+
+
+    let query=document.querySelector('h2')                                  //used to access by queryselector specific tag
+    console.log(query)
+
+
+
+
+/*Dynamically create the tags in HTML*/
+    let para=document.createElement('p') 
+    para.id='pID'                                   //create the own tag using the createelement
+    para.textContent="it is an own txt content"
+    console.log(para);
+    element.append(para)           //it is used to display in screen page (add in last)
+
+
+    for(let i=0;i<=5;i++){
+        let s=document.createElement('p')                                    //create the own tag using the createelement using loop
+        s.textContent="own txt content"
+        console.log(s)
+        element.prepend(s)         //it is used to display in screen page (add in top)
+
+        
+    }
+    
+</script>
+</html> 

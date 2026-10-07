@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Event listener</title>
+</head>
+<body>
+    <button id="sj">Iruku</button>
+    <button id="js">1</button>
+    
+</body>
+<script>
+    let btn=document.getElementById('sj')
+
+    btn.addEventListener('click',(event)=>{
+        btn.textContent="illa"
+        btn.style.color='red'
+        console.log('clicked')
+    
+    } )
+
+    btn.addEventListener('mouseover',(event)=>{
+        btn.textContent="irukumoo"
+        console.log('hover')
+    } )
+
+    btn.addEventListener('mouseout',(event)=>{
+        btn.textContent="iruku"
+        console.log('mouseout')
+    } )
+
+   /* key operation*/
+
+    document.addEventListener('keydown',(event)=>{
+        btn.textContent="iruku"
+        console.log(event.key)
+        switch(event.key){
+            case 'ArrowUp':
+                btn.textContent=Number(btn.textContent)+1
+                break;
+            case 'ArrowDown':
+                btn.textContent=Number(btn.textContent)-1
+                break;
+
+                
+        }
+    } )
+</script>
+</html>
